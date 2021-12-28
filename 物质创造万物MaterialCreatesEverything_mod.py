@@ -238,9 +238,9 @@ class MaterialCreation:
                                     cyn = True
                                     break
                             if cyn:
-                                g.msgbox(f"由于你的物品不够，你只转化了{craft_count} * {kwargs['item_namespeces'][trans_item]}")
+                                g.msgbox(f"由于你的物品不够，你只转化了{craft_count} * {kwargs['item_namespaces'][trans_item]}")
                             else:
-                                g.msgbox(f"你转化了{craft_count} * {kwargs['item_namespeces'][trans_item]}")
+                                g.msgbox(f"你转化了{craft_count} * {kwargs['item_namespaces'][trans_item]}")
             elif choice == 2:
                 g.msgbox("""
     一、打造物质
