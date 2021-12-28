@@ -49,12 +49,12 @@ class WishingFountain:
         if "wf_gold_num" not in kwargs["player_property"].keys():
             kwargs["player_property"]["wf_gold_num"] = 0
         while True:
-            need_gold = int(kwargs["player_property"]["wf_gold_num"] / 5 + 1) * 5
             f_choice = g.indexbox("许愿池边金光闪耀", choices=["许愿", "许愿池商店", "使用许愿池重置剂"])
             if f_choice is None:
                 break
             if f_choice == 0:
                 while True:
+                    need_gold = int(kwargs["player_property"]["wf_gold_num"] / 5 + 1) * 5
                     if not g.ccbox("你要许愿吗？", choices=[f"是的({need_gold}$)", "不了"]):
                         break
                     if kwargs["player_property"]["gold"] < need_gold:
