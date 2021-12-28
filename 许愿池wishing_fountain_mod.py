@@ -33,7 +33,7 @@ class WishingFountain:
         for i in kwargs["item_property"].keys():
             if str(i)[0] == "6" and i not in self.FOUNTAIN_BLACKLIST:
                 self.possibility.append(i)
-        for i in range(100):
+        for i in range(150):
             self.possibility.append(0)
         self.info_print("done")
         self.info_print("preload finished")
