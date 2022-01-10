@@ -1,6 +1,8 @@
-import easygui as g
 import random
-class_name = "mod"
+
+import easygui as g
+
+class_name = "LeftAndRight"
 
 
 def get_key(value, dict_obj):
@@ -9,14 +11,7 @@ def get_key(value, dict_obj):
             return key
 
 
-"""
-it_select = g.choicebox("sssssssss", choices=kwargs["pocket"]["inventory"])
-                if it_select == "LARlstone":
-                    kwargs["pocket"]["inventory"].remove("LARlstone")
-"""
-
-
-class mod:
+class LeftAndRight:
     def __init__(self):
         self.name = "left and right"
         self.GUI = True
@@ -25,7 +20,8 @@ class mod:
         self.NEED_BASE_MOD = False
         self.PRELOAD_ITEM = True
         self.things = ["", "你死了", "你去玩的时候不小心摔了一跤，头上有了一个大包", "这段记忆不知怎的消失了", "你喜欢上了隔壁的一个人", "请的家教天天教你1+1=2", "你学会了骂人",
-                       "你被父母打了一次", "你用父母的手机玩王者荣耀", "腾讯与网易打起了官司，\n笑死，屁用没有", "笑死，没什么事发生", "", "", "", "", "", "", "", "", "", ""]
+                       "你被父母打了一次", "你用父母的手机玩王者荣耀", "腾讯与网易打起了官司，\n笑死，屁用没有", "笑死，没什么事发生", "", "", "", "", "", "", "", "",
+                       "", ""]
         self.year = 0
         self.thing = 0
         self.ITEM_PREFIX = "LAR"
@@ -33,9 +29,9 @@ class mod:
             "lstone": "左之石", "rstone": "右之石"
         }
         self.ITEMS_PROPERTY = {
-            "lstone": {"atk": [30, 30], "type": "wep", "skill":[51],"description": "神奇的石头,功能未知",
+            "lstone": {"atk": [30, 30], "type": "wep", "skill": [51], "description": "神奇的石头,功能未知",
                        "sell": 2000},
-            "rstone": {"atk": [20, 20], "type": "wep","skill":[51], "description": "神奇的石头,来之不易,先别卖掉吧",
+            "rstone": {"atk": [20, 20], "type": "wep", "skill": [51], "description": "神奇的石头,来之不易,先别卖掉吧",
                        "sell": 4000}
         }
 
@@ -68,15 +64,14 @@ class mod:
                         break
 
                     self.year += 1
-            
+
             if choose == 1:
                 if kwargs["player_property"]["hp"] <= 100 or kwargs["player_property"]["gold"] <= 1000:
-                    g.msgbox("你的状态不够，不可获得") 
+                    g.msgbox("你的状态不够，不可获得")
                 else:
                     kwargs["pocket"]["inventory"].append("LARrstone")
                     kwargs["player_property"]["hp"] -= 100
                     kwargs["player_property"]["gold"] -= 1000
-
 
             if choose == 2:
                 g.msgbox("暂无......")
@@ -85,7 +80,7 @@ class mod:
             if choose == 3:
                 inv_dis = []
                 for i in kwargs["pocket"]["inventory"]:
-                   inv_dis.append(kwargs["item_namespaces"][i])
+                    inv_dis.append(kwargs["item_namespaces"][i])
                 while len(inv_dis) < 2:
                     inv_dis.append("无")
 
@@ -100,7 +95,7 @@ class mod:
             if choose == 4:
                 inv_dis = []
                 for i in kwargs["pocket"]["inventory"]:
-                   inv_dis.append(kwargs["item_namespaces"][i])
+                    inv_dis.append(kwargs["item_namespaces"][i])
                 while len(inv_dis) < 2:
                     inv_dis.append("无")
 
